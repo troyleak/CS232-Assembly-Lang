@@ -29,7 +29,5 @@ def binToDecimal(binString):
             exponent = exponent - 1
         return finalValue
 
+
 print binToDecimal(raw_input('Please input any 16-bit binary number: '))
-
-
-###########################################
