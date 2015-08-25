@@ -5,7 +5,7 @@
 def letterAdder(tempList):
     for i in tempList:
         if i in hexDict.keys():
-            print "Replacing " + str(i) + " with " + hexDict[i]
+            # print "Replacing " + str(i) + " with " + hexDict[i]
             z = tempList.index(i)
             y = hexDict[i]
             backwardsList.insert(z,y)
@@ -21,7 +21,7 @@ while True:
         print "Not an integer!"
         continue
     else:
-        print "That is a valid integer"
+        # print "That is a valid integer"
         break
 
 backwardsList = []
@@ -30,13 +30,13 @@ hexDict = {10: 'A', 11: 'B', 12: 'C', 13: 'D', 14: 'E', 15: 'F'}
 
 while True:
     backwardsList.append(userInput%16)
-    print "The remainder of " + str(userInput) + " / 16 = " + str(userInput%16)
+    # print "The remainder of " + str(userInput) + " / 16 = " + str(userInput%16)
     userInput = (userInput/16)
-    print "Now we're working with " + str(userInput)
+    # print "Now we're working with " + str(userInput)
     if (userInput/16)==0:
         backwardsList.append(userInput%16)
-        print (str(backwardsList)) + " are the numbers we're working with"
-        print "Now we need to convert 10 - 15 to A - F"
+        # print (str(backwardsList)) + " are the numbers we're working with"
+        # print "Now we need to convert 10 - 15 to A - F"
         break
 
 
@@ -48,5 +48,6 @@ finalList = []
 for i in reversed(backwardsList):
     finalList.append(i)
 
-print type(finalList)
-# ALL I NEED IS TO CONCATENATE THIS LIST TO A STRING YOU MOTHERFUCKER
+print "Hexadecimal value for that integer is :"
+for i in finalList:
+    print i,
