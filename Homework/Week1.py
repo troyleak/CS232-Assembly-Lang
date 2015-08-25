@@ -7,10 +7,9 @@ def stringChecker(x):
     # return false if x isn't 16 bits or contains anything other than 1 or 0
     print len(x)
     if ((len(x)) != 16) or ( not( set([1,0]) and set(x))):
-        print "not a valid 16-bit binary string123412"
+        print "not a valid 16-bit binary string"
         return False
     else:
-        # print "valid string"
         return True
 
 def binToDecimal(binString):
@@ -25,12 +24,9 @@ def binToDecimal(binString):
             # Summation of Weighted Positional Notation addition of parts
             # n is string containing either 0 or 1
             # exponent iterates down
-            # print "checking index " + str(exponent) + " for a 1"
             if int(n)==0:
-                # print "index " + str(exponent) + " is " + n + ", doing nothing"
                 continue
             if int(n)==1:
-                # print "adding " + str(2**(exponent)) + " at index " + str(exponent)
                 finalValue = finalValue + (2**(exponent))
             exponent = exponent - 1
         return finalValue
@@ -47,7 +43,6 @@ print "Part 2"
 def letterAdder(tempList):
     for i in tempList:
         if i in hexDict.keys():
-            # print "Replacing " + str(i) + " with " + hexDict[i]
             z = tempList.index(i)
             y = hexDict[i]
             backwardsList.insert(z,y)
@@ -57,13 +52,14 @@ def letterAdder(tempList):
 userInput = 0
 
 while True:
+    # Gets user input and validates it is an integer
+    # Technically not required but a good idea nonetheless
     try:
         userInput = int(input("Enter an integer: "))
     except ValueError:
-        print "Not an integer!"
+        print "Not a valid integer!"
         continue
     else:
-        # print "That is a valid integer"
         break
 
 backwardsList = []
