@@ -8,9 +8,9 @@ def letterAdder(tempList):
             print "Replacing " + str(i) + " with " + hexDict[i]
             z = tempList.index(i)
             y = hexDict[i]
-            finalList.insert(z,y)
-            finalList.remove(i)
-            print finalList
+            backwardsList.insert(z,y)
+            backwardsList.remove(i)
+            # list is still backwards at this point.
 
 userInput = 0
 
@@ -24,21 +24,29 @@ while True:
         print "That is a valid integer"
         break
 
-finalList = []
+backwardsList = []
 hexDict = {10: 'A', 11: 'B', 12: 'C', 13: 'D', 14: 'E', 15: 'F'}
 
 
 while True:
-    finalList.append(userInput%16)
-    print "Appending " + str(userInput%16) + " to finalList"
+    backwardsList.append(userInput%16)
+    print "The remainder of " + str(userInput) + " / 16 = " + str(userInput%16)
     userInput = (userInput/16)
-    print str(userInput)
+    print "Now we're working with " + str(userInput)
     if (userInput/16)==0:
-        finalList.append(userInput%16)
-        print (str(finalList)) + " are the numbers we're working with"
+        backwardsList.append(userInput%16)
+        print (str(backwardsList)) + " are the numbers we're working with"
         print "Now we need to convert 10 - 15 to A - F"
         break
 
 
 
-letterAdder(finalList)
+letterAdder(backwardsList)
+
+finalList = []
+
+for i in reversed(backwardsList):
+    finalList.append(i)
+
+print type(finalList)
+# ALL I NEED IS TO CONCATENATE THIS LIST TO A STRING YOU MOTHERFUCKER
