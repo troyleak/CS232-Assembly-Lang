@@ -1,7 +1,3 @@
-###########################################
-# Assignment 2 is similar, so I'm lumping it into one file. I'll break them down
-# later, I'm sure.
-
 def letterAdder(tempList):
     for i in tempList:
         if i in hexDict.keys():
